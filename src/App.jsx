@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Home, Product, Princing, NotFound, AppLayout, Login } from './pages'
+import { Home, Product, Pricing, NotFound, AppLayout, Login } from './pages'
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="product" element={<Product />} />
-        <Route path="pricing" element={<Princing />} />
+        <Route path="pricing" element={<Pricing />} />
         <Route path="app" element={<AppLayout />} />
         <Route path="login" element={<Login />} />
         <Route path="*" element={<NotFound />} />

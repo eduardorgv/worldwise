@@ -1,2 +1,4 @@
-export * from './AppNav';
-export * from './PageNav';
+export * from './appNav/AppNav';
+export * from './pageNav/PageNav';
+export * from './map/Map';
+export * from './sidebar/Sidebar'

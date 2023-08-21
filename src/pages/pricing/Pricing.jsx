@@ -1,7 +1,7 @@
-import { PageNav } from "../components"
-import styles from './Product.module.css';
+import { PageNav } from "../../components"
+import styles from '../product/Product.module.css';
 
-export const Princing = () => {
+export const Pricing = () => {
   return (
     <main className={styles.product}>
       <PageNav />

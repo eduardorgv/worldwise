@@ -1,11 +1,11 @@
-export const initialState = {
+export const initialStateCity = {
   cities: [],
   isLoading: false,
   currentCity: {},
   error: "",
 };
 
-export function reducer(state, action) {
+export function reducerCity(state, action) {
   switch (action.type) {
     case "loading": {
       return {

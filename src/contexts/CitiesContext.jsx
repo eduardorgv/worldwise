@@ -4,15 +4,15 @@ import {
   useEffect,
   useReducer,
 } from "react";
-import { initialState, reducer } from "../reducer/cityReducer";
+import { initialStateCity, reducerCity } from "../reducer/cityReducer";
 
 const CitiesContext = createContext();
 const BASE_URL = "http://localhost:8000";
 
 export const CitiesProvider = ({ children }) => {
   const [{ cities, isLoading, currentCity }, dispatch] = useReducer(
-    reducer,
-    initialState
+    reducerCity,
+    initialStateCity
   );
 
   useEffect(() => {

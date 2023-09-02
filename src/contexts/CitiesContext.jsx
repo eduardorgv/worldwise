@@ -1,5 +1,6 @@
 import {
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useReducer,
@@ -34,7 +35,7 @@ export const CitiesProvider = ({ children }) => {
     }
   };
 
-  const getCity = async (id) => {
+  const getCity = useCallback(async (id) => {
     if (Number(id) === currentCity.id) return;
     dispatch({ type: "loading" });
     try {
@@ -48,7 +49,7 @@ export const CitiesProvider = ({ children }) => {
         payload: "Error at getting the city ❌",
       });
     }
-  };
+  }, [currentCity.id]);
 
   const createCity = async (newCity) => {
     dispatch({ type: "loading" });
@@ -61,7 +62,7 @@ export const CitiesProvider = ({ children }) => {
         },
       });
       const data = await res.json();
-      dispatch({ type: 'city/created', payload: data })
+      dispatch({ type: "city/created", payload: data });
     } catch (error) {
       console.error("Error at creating the city ❌: ", error);
       dispatch({
@@ -77,7 +78,7 @@ export const CitiesProvider = ({ children }) => {
       await fetch(`${BASE_URL}/cities/${id}`, {
         method: "DELETE",
       });
-      dispatch({ type: 'city/deleted', payload: id })
+      dispatch({ type: "city/deleted", payload: id });
     } catch (error) {
       console.error("Error at deleting the city ❌: ", error);
       dispatch({
